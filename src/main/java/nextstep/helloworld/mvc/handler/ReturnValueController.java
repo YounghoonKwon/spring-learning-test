@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/return-value")
 public class ReturnValueController {
+    @ModelAttribute
+    public void string() {
+        return "message";
+    }
 
-//    public void string() {
-//        return "message";
-//    }
-//
-//    public void responseBodyForUser() {
-//        return new User("name", "email");
-//    }
-//
-//    public void responseEntity(@PathVariable Long id) {
-//        return ResponseEntity.ok(new User("name", "email"));
-//    }
-//
-//    public void responseEntityFor400() {
-//        return ResponseEntity.badRequest().build();
-//    }
+    public void responseBodyForUser() {
+        return new User("name", "email");
+    }
+
+    public void responseEntity(@PathVariable Long id) {
+        return ResponseEntity.ok(new User("name", "email"));
+    }
+
+    public void responseEntityFor400() {
+        return ResponseEntity.badRequest().build();
+    }
 }
